@@ -1,9 +1,12 @@
 site_name: Postweb相关资料
 nav:
-    - torchserve踩坑.md
-    - 揽件平台.md
-    - 实验室GO环境相关资料.md
-    - 如何添加接口.md
-    - 代码问题讨论记录一.md
+    - 理论 :
+      - 2022-3-3-系统部署相关知识.md
+      - 实验室GO环境相关资料.md
+      - 代码问题讨论记录一.md
+    - 实践 :
+      - torchserve踩坑.md
+      - 揽件平台.md
+      - 如何添加接口.md
 theme:
   name: 'material'
