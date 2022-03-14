@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Postweb相关资料
 nav:
     - torchserve踩坑.md
     - 揽件平台.md
