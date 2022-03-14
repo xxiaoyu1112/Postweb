@@ -1,0 +1,1052 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>如何添加接口 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-torchserve-grpc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              如何添加接口
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../torchserve%E8%B8%A9%E5%9D%91/" class="md-nav__link">
+        Torchserve踩坑
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8F%BD%E4%BB%B6%E5%B9%B3%E5%8F%B0/" class="md-nav__link">
+        揽件平台
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%9E%E9%AA%8C%E5%AE%A4GO%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" class="md-nav__link">
+        实验室GO环境相关资料
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          如何添加接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        如何添加接口
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-torchserve-grpc" class="md-nav__link">
+    1. 测试torchserve grpc接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-postrpcpost_model_managerpc" class="md-nav__link">
+    2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-clonepostrpc" class="md-nav__link">
+    2.1 首先clone下postrpc服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-idl" class="md-nav__link">
+    2.2 更改idl文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 重新生成客户端和服务端代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 实现服务中的接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    接口实现
+  </a>
+  
+    <nav class="md-nav" aria-label="接口实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkparm" class="md-nav__link">
+    CheckParm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-model-handler" class="md-nav__link">
+    Register Model Handler的业务逻辑
+  </a>
+  
+    <nav class="md-nav" aria-label="Register Model Handler的业务逻辑">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torchserve-grpc" class="md-nav__link">
+    调用torchserve grpc部分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registermodelhandler-checkparam" class="md-nav__link">
+    RegisterModelHandler CheckParam逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registermodelhandler-run" class="md-nav__link">
+    RegisterModelHandler  Run 逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlergo" class="md-nav__link">
+    在handler.go中实现逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API部分
+  </a>
+  
+    <nav class="md-nav" aria-label="API部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_model_manage" class="md-nav__link">
+    调用post_model_manage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs" class="md-nav__link">
+    bugs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BB%A3%E7%A0%81%E9%97%AE%E9%A2%98%E8%AE%A8%E8%AE%BA%E8%AE%B0%E5%BD%95%E4%B8%80/" class="md-nav__link">
+        代码问题讨论记录一
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-torchserve-grpc" class="md-nav__link">
+    1. 测试torchserve grpc接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-postrpcpost_model_managerpc" class="md-nav__link">
+    2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-clonepostrpc" class="md-nav__link">
+    2.1 首先clone下postrpc服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-idl" class="md-nav__link">
+    2.2 更改idl文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 重新生成客户端和服务端代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 实现服务中的接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    接口实现
+  </a>
+  
+    <nav class="md-nav" aria-label="接口实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkparm" class="md-nav__link">
+    CheckParm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-model-handler" class="md-nav__link">
+    Register Model Handler的业务逻辑
+  </a>
+  
+    <nav class="md-nav" aria-label="Register Model Handler的业务逻辑">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torchserve-grpc" class="md-nav__link">
+    调用torchserve grpc部分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registermodelhandler-checkparam" class="md-nav__link">
+    RegisterModelHandler CheckParam逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registermodelhandler-run" class="md-nav__link">
+    RegisterModelHandler  Run 逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlergo" class="md-nav__link">
+    在handler.go中实现逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API部分
+  </a>
+  
+    <nav class="md-nav" aria-label="API部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_model_manage" class="md-nav__link">
+    调用post_model_manage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs" class="md-nav__link">
+    bugs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>如何添加接口</h1>
+
+<p>post服务添加接口</p>
+<p>我们以添加一个注册模型的接口进行演示</p>
+<p>采用</p>
+<p>torchserve -&gt; post_model_manage(rpc) -&gt; postapi(http) -&gt; postweb(web)的顺序</p>
+<h3 id="1-torchserve-grpc">1. 测试torchserve grpc接口</h3>
+<p>用bloomRPC进行加载torchserve的proto文件,尝试注册模型</p>
+<p>可以通过我们启动docker的命令查看到torchserve的运行端口，命令如下</p>
+<pre><code class="language-bash">sudo docker run -d --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /data/MengQingqiang/rpc/model_store:/tmp/models pytorch/torchserve:0.5.0-cpu torchserve --start --model-store /tmp/models/ --no-config-snapshots
+</code></pre>
+<p>结合torchserve的官方文档https://pytorch.org/serve/grpc_api.html，torchserve中7071是模型管理的grpc接口 </p>
+<p><img alt="mkdocs" src="../images/grpc%E6%8E%A5%E5%8F%A3.png" /></p>
+<p>​     因此我们找到Register模型的方法，尝试注册一个模型, 选择本地，通过启动命令我们知道,模型目录是在/data/MengQingqiang/rpc/model_store，因此我们把一个模型放到这个目录下尝试通过grpc方式注册。</p>
+<p>最方便的方式是我们卸载一个本地加载的模型，启动前端进行卸载(为了方便操作)，</p>
+<p><img alt="mkdocs" src="../images/%E6%9C%AC%E5%9C%B0%E7%9B%AE%E5%BD%95.png" /></p>
+<p>可以看到本地目录存在这个mar包，现在我们进行注册</p>
+<p><img alt="mkdocs" src="../images/%E8%BF%9B%E8%A1%8C%E6%B3%A8%E5%86%8C.png" /></p>
+<p>ok,现在已经成功说明接口不存在问题，现在我们需要开发来实现这个部分。</p>
+<h3 id="2-postrpcpost_model_managerpc">2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口</h3>
+<h4 id="21-clonepostrpc">2.1 首先clone下postrpc服务</h4>
+<blockquote>
+<p>git clone https://github.com/SpringTY/postrpc.git</p>
+<p>我本地之前有这个model,所以不需要这个步骤</p>
+</blockquote>
+<h4 id="22-idl">2.2 更改idl文件</h4>
+<p>首先，我们打开postrpc文件夹，发现其中存在idl/post_model_manage.proto文件，在其中新加一个接口RegisterModel</p>
+<pre><code class="language-protobuf">// add Request Struct
+message RegisterModelRequest{
+  string url = 1;
+}
+// add Response Struct
+message RegisterModelResponse{
+  string message = 1;
+  int32 status = 2;
+}
+
+service PostModelManage{
+    rpc GetModels (GetModelsRequest) returns (GetModelsResponse) {}
+    rpc RemoveModel (RemoveModelRequest) returns (RemoveModelResponse) {}
+    rpc UpdateModelConfig (UpdateModelConfigRequest) returns (UpdateModelConfigResponse) {}
+    rpc GetModelStates(GetModelStatesRequest) returns (GetModelStatesResponse) {}
+    rpc RegisterModel(RegisterModelRequest) returns (RegisterModelResponse){} // 这里是新加的
+}
+</code></pre>
+<h4 id="23">2.3 重新生成客户端和服务端代码</h4>
+<p>我们采用sh/post_data_manage.sh的脚本生成代码,这个脚本是我自己写的，因此如果新建rpc服务可以仿照这个脚本写生成代码逻辑</p>
+<pre><code class="language-bash">sh/post_data_manage.sh
+</code></pre>
+<p>运行命令后，使用git status发现存在两部分的代码发生改变 一部分为rpc_sdk(客户端)另一部分为当前目录下的post_model_manage(服务端)</p>
+<pre><code class="language-text">(base) pi@ubuntu:/mnt/hgfs/share_vm/postrpc$ sh/post_model_manage.sh 
+IDL:sh/../idl/post_model_manage.proto
+(base) pi@ubuntu:/mnt/hgfs/share_vm/postrpc$ git status
+位于分支 feature_manage_2
+尚未暂存以备提交的变更：
+  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
+  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+        修改：     post_model_manage/idl/post_model_manage/post_model_manage.pb.go
+        修改：     post_model_manage/idl/post_model_manage/post_model_manage_grpc.pb.go
+        修改：     rpc_sdk/post_model_manage/post_model_manage.pb.go
+        修改：     rpc_sdk/post_model_manage/post_model_manage_grpc.pb.go
+
+修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+</code></pre>
+<p>每次我们新添加rpc的接口的时候需要重新执行这个脚本，建议确认工作区无变动时执行</p>
+<h4 id="24">2.4 实现服务中的接口</h4>
+<h4 id="_1">接口实现</h4>
+<p>打开postrpc目录下的post_model_manage文件夹，在hander.go中，我们让Server结构体实现idl/post_data_manage包下的PostModelManageServer接口 这里有点不太确定 PostModelManageServer 和UnsafePostModelManageServer的区别，可以去看代码或者研究grpc加载服务的逻辑，ok, 现在确定乐是需要实现post_model_manage/idl/post_model_manage.PostModelManageServer接口</p>
+<p>可以看到IDE选择实现接口时生成了一个方法，对应我们刚才在IDL中声明的接口</p>
+<p><img alt="mkdocs" src="../images/IDL%E4%B8%AD%E5%A3%B0%E6%98%8E%E7%9A%84%E6%8E%A5%E5%8F%A3.png" /></p>
+<p>现在我们要实现这个方法，因为默认时抛一个异常</p>
+<p>在handler包下新建一个文件叫做register_model.go</p>
+<pre><code class="language-go">package handler
+
+import (
+    &quot;context&quot;
+    &quot;post_model_manage/idl/post_model_manage&quot;
+)
+
+type RegisterModelHandler struct {
+    Request  *post_model_manage.RegisterModelRequest
+    Response *post_model_manage.RegisterModelResponse
+    Ctx      context.Context
+}
+
+func NewRegisterModelHandler(Ctx context.Context, Request *post_model_manage.RegisterModelRequest) *RegisterModelHandler {
+    return &amp;RegisterModelHandler{
+        Request: Request,
+        Ctx:     Ctx,
+        Response: &amp;post_model_manage.RegisterModelResponse{
+            Message: &quot;success&quot;,
+            Status:  0,
+        },
+    }
+}
+func (h *RegisterModelHandler) Run() {
+}
+
+func (h *RegisterModelHandler) CheckParam() error {
+
+    return nil
+}
+</code></pre>
+<p>可以看到，我们代码包含一个RegisterModelHandler，与同包下其他文件类似，这类似于一个http服务的一个Controller，RegisterModelHandler其中存在两个方法，一个是Run另一个是CheckParam</p>
+<h5 id="run">Run方法</h5>
+<p>具体的业务逻辑实现代码</p>
+<h5 id="checkparm">CheckParm</h5>
+<p>输入参数检查代码</p>
+<h4 id="register-model-handler">Register Model Handler的业务逻辑</h4>
+<p>我们的业务逻辑也很简单，就是1.读取输入的url 2.调用torchserve的grpc接口进行注册模型 3. 返回响应</p>
+<h5 id="torchserve-grpc">调用torchserve grpc部分</h5>
+<p>因为模型管理模块已经写过torchserve grpc逻辑，我们打开post_model_manage/rpc文件夹下的management.go进行添加注册模型逻辑</p>
+<pre><code class="language-go">func RegisterModel(ctx context.Context, url, modelName string) (string, error) {
+    req := &amp;pb.RegisterModelRequest{
+        InitialWorkers: 1,
+        ModelName:      modelName,
+        Synchronous:    false, //是否是同步加载,我们选择异步加载
+        Url:            url,
+    }
+    resp, err := management_client.RegisterModel(ctx, req)
+    if err != nil {
+        log.Printf(&quot;[Error] Error call rpc RegisterModel, err: %v&quot;, err)
+        return err.Error(), err
+    }
+    return resp.Msg, nil
+}
+</code></pre>
+<h5 id="registermodelhandler-checkparam">RegisterModelHandler CheckParam逻辑</h5>
+<p>这里做参数校验, 可以允许两种类型参数http://xxx/xxx/xxx.mar 网络位置 和xxx.mar 本地位置</p>
+<p>可以用正则表达式来做, 选择用正则</p>
+<pre><code class="language-go">const httpMarReg = &quot;(https?|ftp|file)://[-A-Za-z0-9+&amp;@#/%?=~_|!:,.;]+[-A-Za-z0-9+&amp;@#/%=~_|].mar&quot;
+const localMarReg = &quot;.*.mar&quot;
+
+var HttpMarRegexp *regexp.Regexp
+var LocalMarRegexp *regexp.Regexp
+
+func Init() {
+    HttpMarRegexp = regexp.MustCompile(httpMarReg)
+    LocalMarRegexp = regexp.MustCompile(localMarReg)
+}
+
+</code></pre>
+<h5 id="registermodelhandler-run">RegisterModelHandler  Run 逻辑</h5>
+<p>有两种方式获取modelName 一种grpc的请求传参，另一种约定以mar包的包名，我们现在做以包名的方式命名模型名</p>
+<pre><code class="language-go">package handler
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;log&quot;
+    &quot;post_model_manage/consts&quot;
+    &quot;post_model_manage/idl/post_model_manage&quot;
+    &quot;post_model_manage/rpc&quot;
+    &quot;strings&quot;
+)
+
+type RegisterModelHandler struct {
+    Request  *post_model_manage.RegisterModelRequest
+    Response *post_model_manage.RegisterModelResponse
+    Ctx      context.Context
+}
+
+func NewRegisterModelHandler(Ctx context.Context, Request *post_model_manage.RegisterModelRequest) *RegisterModelHandler {
+    return &amp;RegisterModelHandler{
+        Request: Request,
+        Ctx:     Ctx,
+        Response: &amp;post_model_manage.RegisterModelResponse{
+            Message: &quot;success&quot;,
+            Status:  0,
+        },
+    }
+}
+func (h *RegisterModelHandler) Run() {
+    err := h.CheckParam()
+    if err != nil {
+        h.Response.Status = 1
+        h.Response.Message = err.Error()
+        return
+    }
+    modelUrl := h.Request.Url
+    modelName := h.getModelName()
+    toast, err := rpc.RegisterModel(h.Ctx, modelUrl, modelName)
+    if err != nil {
+        h.Response.Status = 1
+        h.Response.Message = err.Error()
+        return
+    }
+    h.Response.Message = toast
+}
+func (h *RegisterModelHandler) getModelName() string {
+    modelUrl := h.Request.Url
+    modelName := &quot;&quot;
+    marName := &quot;&quot;
+    if consts.HttpMarRegexp.Match([]byte(modelUrl)) {
+        httpPath := strings.Split(modelUrl, &quot;\\&quot;)
+        marName = httpPath[len(httpPath)-1]
+    } else {
+        marName = modelUrl
+    }
+    // &quot;.mar&quot;
+    modelName = marName[:len(marName)-4]
+    return modelName
+}
+func (h *RegisterModelHandler) CheckParam() error {
+    modelUrl := h.Request.Url
+    if consts.HttpMarRegexp.Match([]byte(modelUrl)) {
+        return nil
+    }
+    if consts.LocalMarRegexp.Match([]byte(modelUrl)) {
+        return nil
+    }
+    return fmt.Errorf(&quot;modelUrl is valid:%s&quot;, modelUrl)
+}
+
+</code></pre>
+<h5 id="handlergo">在handler.go中实现逻辑</h5>
+<pre><code class="language-go">func (s *Server) RegisterModel(ctx context.Context, request *post_model_manage.RegisterModelRequest) (*post_model_manage.RegisterModelResponse, error) {
+    Handler := handler.NewRegisterModelHandler(ctx, request)
+    Handler.Run()
+    return Handler.Response, nil
+}
+</code></pre>
+<h5 id="_2">测试</h5>
+<blockquote>
+<p>sh build.sh</p>
+<p>out/post_model_manage</p>
+</blockquote>
+<p>分别测试本地和网络位置</p>
+<p><img alt="mkdocs" src="../images/%E6%B5%8B%E8%AF%95%E6%9C%AC%E5%9C%B0%E5%92%8C%E7%BD%91%E7%BB%9C%E4%BD%8D%E7%BD%AE.png" /></p>
+<p>由此grpc的部分已经做好</p>
+<h3 id="api">API部分</h3>
+<p>首先我们git clone下api代码</p>
+<h4 id="_3">定义接口</h4>
+<p>我们定义注册模型请求为post请求且 path如下</p>
+<blockquote>
+<p>/model/register</p>
+<p>model_url是body的一个属性</p>
+</blockquote>
+<p>在main.go中添加一个</p>
+<pre><code class="language-go">r.POST(&quot;/model/register&quot;, handler.RegisterModelHandler)
+</code></pre>
+<p>然后在handler里面添加一个文件register_model_handler.go 在该文件中添加方法RegisterModelHandler，</p>
+<blockquote>
+<p>事实上你可以定义一个接口体RegisterModelHandler，并替换main.go中的函数为handler wrapperRegisterModel,</p>
+<p>在wrapperRegisterModelHandler 进行参数验证，并且生成一个RegisterModelHandler执行RegisterModelHandler.RUN 这更加规范，但是我懒得这个搞了</p>
+</blockquote>
+<pre><code class="language-go">package handler
+
+import (
+    &quot;net/http&quot;
+    view_model &quot;postapi/model/view&quot;
+
+    &quot;github.com/gin-gonic/gin&quot;
+)
+
+type RegisterModelBody struct {
+    ModelUrl string `json:&quot;model_url&quot;`
+}
+
+func RegisterModelHandler(c *gin.Context) {
+    body := RegisterModelBody{}
+    err := c.BindJSON(&amp;body)
+    if err != nil {
+        c.JSON(http.StatusBadRequest, nil)
+        return
+    }
+    toast, err := RegisterModel(c, &amp;body)
+    if err != nil {
+        c.JSON(http.StatusInternalServerError, nil)
+        return
+    }
+    resp := &amp;view_model.CommonResult{
+        Message: toast,
+        Status:  0,
+    }
+    c.JSON(http.StatusOK, resp)
+}
+func RegisterModel(ctx *gin.Context, body *RegisterModelBody) (string, error) {
+    //调用post_model_manage 逻辑
+}
+
+</code></pre>
+<h4 id="post_model_manage">调用post_model_manage</h4>
+<p>首先，我们更新rpc依赖</p>
+<pre><code class="language-bash">go get github.com/SpringTY/postrpc
+</code></pre>
+<p>然后在rpc/model_manage.go中添加RegisterModel方法</p>
+<pre><code class="language-go">func RegisterModel(ctx context.Context, modelUrl string) (string, error) {
+    req := &amp;post_model_manage.RegisterModelRequest{
+        Url: modelUrl,
+    }
+    resp, err := model_manage_client.RegisterModel(ctx, req)
+    if err != nil {
+        return &quot;&quot;, err
+    } else if resp.Status != 0 {
+        return &quot;&quot;, errors.New(resp.Message)
+    }
+    return resp.Message, nil
+}
+</code></pre>
+<p>register_model.go中逻辑</p>
+<pre><code>func RegisterModel(ctx *gin.Context, body *RegisterModelBody) (string, error) {
+    //调用post_model_manage 逻辑
+    toast, err := rpc.RegisterModel(ctx, body.ModelUrl)
+    if err != nil {
+        return &quot;&quot;, err
+    }
+    return toast, nil
+}
+</code></pre>
+<p>我稍稍改动了一些register_model.go的RegisterModelHandler逻辑 见代码</p>
+<h4 id="_4">测试</h4>
+<p>首先启动rpc服务 更改我们调用rpc服务的地址为本地进行测试</p>
+<p>地址为rpc/model_manage.go 的model_manage_address变量</p>
+<blockquote>
+<p>go run main,go</p>
+</blockquote>
+<pre><code class="language-bash">import http.client
+import json
+
+conn = http.client.HTTPSConnection(&quot;vm&quot;, 7675)
+payload = json.dumps({
+  &quot;model_url&quot;: &quot;greedy_time.mar&quot;
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+conn.request(&quot;POST&quot;, &quot;/model/register&quot;, payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode(&quot;utf-8&quot;))
+</code></pre>
+<p>测试接口</p>
+<h2 id="bugs">bugs</h2>
+<p>刚才发现如果加载网络位置模型会导致无法打开列表，并且模型的url不正确，现在fix一下</p>
+<p><img alt="mkdocs" src="../images/fix%E4%B8%80%E4%B8%8B.png" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../%E5%AE%9E%E9%AA%8C%E5%AE%A4GO%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 实验室GO环境相关资料" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              实验室GO环境相关资料
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E4%BB%A3%E7%A0%81%E9%97%AE%E9%A2%98%E8%AE%A8%E8%AE%BA%E8%AE%B0%E5%BD%95%E4%B8%80/" class="md-footer__link md-footer__link--next" aria-label="Next: 代码问题讨论记录一" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              代码问题讨论记录一
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
