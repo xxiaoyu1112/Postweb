@@ -13,7 +13,7 @@
     
     
       
-        <title>如何添加接口 - Postweb相关资料</title>
+        <title>1.4 如何添加接口 - Postweb相关资料</title>
       
     
     
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              如何添加接口
+              1.4 如何添加接口
             
           </span>
         </div>
@@ -176,12 +176,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -244,11 +246,205 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.4%20%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%8E%A5%E5%8F%A3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.4 如何添加接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.4 如何添加接口
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-torchserve-grpc" class="md-nav__link">
+    1. 测试torchserve grpc接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-postrpcpost_model_managerpc" class="md-nav__link">
+    2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 在postrpc中的post_model_manage添加一个注册模型的rpc接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-clonepostrpc" class="md-nav__link">
+    2.1 首先clone下postrpc服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-idl" class="md-nav__link">
+    2.2 更改idl文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 重新生成客户端和服务端代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 实现服务中的接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    接口实现
+  </a>
+  
+    <nav class="md-nav" aria-label="接口实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkparm" class="md-nav__link">
+    CheckParm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-model-handler" class="md-nav__link">
+    Register Model Handler的业务逻辑
+  </a>
+  
+    <nav class="md-nav" aria-label="Register Model Handler的业务逻辑">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torchserve-grpc" class="md-nav__link">
+    调用torchserve grpc部分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registermodelhandler-checkparam" class="md-nav__link">
+    RegisterModelHandler CheckParam逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registermodelhandler-run" class="md-nav__link">
+    RegisterModelHandler  Run 逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlergo" class="md-nav__link">
+    在handler.go中实现逻辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API部分
+  </a>
+  
+    <nav class="md-nav" aria-label="API部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_model_manage" class="md-nav__link">
+    调用post_model_manage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs" class="md-nav__link">
+    bugs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -572,7 +768,7 @@
                 
 
 
-  <h1>如何添加接口</h1>
+  <h1>1.4 如何添加接口</h1>
 
 <p>post服务添加接口</p>
 <p>我们以添加一个注册模型的接口进行演示</p>
@@ -917,6 +1113,41 @@ print(data.decode(&quot;utf-8&quot;))
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../1.3%20Torchserve%E4%BD%BF%E7%94%A8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1.3 Torchserve使用" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              1.3 Torchserve使用
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../2.2%20%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E6%89%8B%E5%86%8C/" class="md-footer__link md-footer__link--next" aria-label="Next: 介绍" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              介绍
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

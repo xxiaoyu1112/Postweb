@@ -1,0 +1,1178 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>1.3 Torchserve使用 - Postweb相关资料</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#torchserve" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Postweb相关资料" class="md-header__button md-logo" aria-label="Postweb相关资料" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Postweb相关资料
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.3 Torchserve使用
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Postweb相关资料" class="md-nav__button md-logo" aria-label="Postweb相关资料" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Postweb相关资料
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          1、系统开发手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1、系统开发手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          1、系统开发手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1%20%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2%20%E5%88%9D%E6%AD%A5%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.3 Torchserve使用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        1.3 Torchserve使用
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#torchserve" class="md-nav__link">
+    如何打包一个模型在torchserve上
+  </a>
+  
+    <nav class="md-nav" aria-label="如何打包一个模型在torchserve上">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency" class="md-nav__link">
+    Dependency
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    一般方法（很久前测试，如果有bug自查解决）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    本人保存过的镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serve-my-own-model" class="md-nav__link">
+    Serve my own model
+  </a>
+  
+    <nav class="md-nav" aria-label="Serve my own model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    为什么引入handler？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-handler" class="md-nav__link">
+    动手写一个model 和 handler
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4%20%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%8E%A5%E5%8F%A3/" class="md-nav__link">
+        1.4 如何添加接口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          2、系统部署手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2、系统部署手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          2、系统部署手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1 部署相关知识.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2%20%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          3、系统使用手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3、系统使用手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          3、系统使用手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1 模型添加说明.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#torchserve" class="md-nav__link">
+    如何打包一个模型在torchserve上
+  </a>
+  
+    <nav class="md-nav" aria-label="如何打包一个模型在torchserve上">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency" class="md-nav__link">
+    Dependency
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    一般方法（很久前测试，如果有bug自查解决）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    本人保存过的镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serve-my-own-model" class="md-nav__link">
+    Serve my own model
+  </a>
+  
+    <nav class="md-nav" aria-label="Serve my own model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    为什么引入handler？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-handler" class="md-nav__link">
+    动手写一个model 和 handler
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>1.3 Torchserve使用</h1>
+
+<h2 id="torchserve">如何打包一个模型在torchserve上</h2>
+<h3 id="dependency">Dependency</h3>
+<ol>
+<li>安装好torchserve环境</li>
+</ol>
+<h4 id="bug">一般方法（很久前测试，如果有bug自查解决）</h4>
+<p>拉取image</p>
+<pre><code class="language-bash">docker pull pytorch/torchserve:0.5.2-cpu
+</code></pre>
+<p>运行</p>
+<pre><code class="language-bash">docker run -d --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /data/MengQingqiang/rpc/model_store:/tmp/models pytorch/torchserve:0.5.2-cpu torchserve --start --model-store /tmp/models/  --no-config-snapshots
+</code></pre>
+<blockquote>
+<p>/data/MengQingqiang/rpc/model_store 是指定宿主机模型存储位置</p>
+<p>6080 推理http接口 6081 模型管理 http接口 </p>
+<p>7070 推理grpc接口 7071模型管理 grpc接口 </p>
+</blockquote>
+<h4 id="_1">本人保存过的镜像</h4>
+<p>注意： 如果你用48号服务器，本人保存了一个镜像 torchserer:v1.2.1 这个拼写错误忽略 或者重新commit一个正确的使用</p>
+<p>执行以下命令即可 </p>
+<pre><code>docker run  --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /data/MengQingqiang/rpc/model_store:/tmp/models torchserer:v1.2.1 torchserve --start --model-store /tmp/models/ --models greedy_distance.mar --no-config-snapshots
+</code></pre>
+<p>如果端口显示占用，查看容器是否运行，一般来说都在运行，因为揽件平台依赖这个服务</p>
+<ol>
+<li>需要安装torch-model-archiver</li>
+</ol>
+<p><code>pip install torch-model-archiver</code></p>
+<blockquote>
+<p>注意采用pip 或者conda的方式安装，避免采用yum apt-get等方式绑定到系统python而非conda虚拟环境python</p>
+<p>可以采用  which  torch-model-archiver 查看使用了哪个包管理下的软件，利用alias可以指定具体的</p>
+</blockquote>
+<h3 id="quick-start">Quick Start</h3>
+<ol>
+<li>拉取serve源代码</li>
+</ol>
+<pre><code class="language-bash">git clone https://github.com/pytorch/serve.git
+# 重命名为serve文件夹
+mv serve-master serve
+</code></pre>
+<blockquote>
+<p>我们可以看到这个文件夹中包含examples的文件夹，其中又分为图像分类、图像分割等，这个文件夹就是一个示例，包含了各种模型打包的示例</p>
+</blockquote>
+<ol>
+<li>打包代码</li>
+</ol>
+<p>我们打包示例程序，我们就举一个最基本的栗子，还记得mnist吗？</p>
+<p>examples/image_classiffer/mnist文件夹中包含了说明 readme文件</p>
+<pre><code class="language-bash"># 确保进入serve文件夹
+cd serve
+# 查看当前环境torch-model-archiver,确保采用的conda环境是安装torch-model-archiver正确的环境
+wihch torch-model-archiver
+# 打包
+torch-model-archiver --model-name mnist --version 1.0 --model-file examples/image_classifier/mnist/mnist.py --handler  examples/image_classifier/mnist/mnist_handler.py
+# 查看产物
+ls -l | grep mnist.mar
+</code></pre>
+<ol>
+<li>上传到serve服务器</li>
+</ol>
+<p>一共存在两种方式</p>
+<ol>
+<li>
+<p>local file 把*.mar的文件复制到serve本地的模型文件夹（在启动torchserver时指定--model-store参数的文件夹）</p>
+<p>我们以211.71.76.189 gpu-48号服务器作为示例，该服务器上存在一个torchserve服务，且文件夹在/data/MengQingqiang/rpc/model_store/下，模型管理http端口是6081</p>
+</li>
+</ol>
+<pre><code class="language-bash">cp mnist.mar /data/MengQingqiang/rpc/model_store/
+</code></pre>
+<p>​       这时候模型文件就存在本地，然后调用http接口让serve服务器运行这个模型</p>
+<pre><code class="language-bash">curl --location --request POST 'http://211.71.76.189:6081/models?url=mnist.mar' 
+</code></pre>
+<p>​       然后我们查看部署结果</p>
+<pre><code class="language-bash">curl --location --request GET 'http://211.71.76.189:6081/models/'
+</code></pre>
+<ol>
+<li>
+<p>我们可以把当前的包含*.mar目录作为一个http服务器，让torchserve下载*.mar文件后运行</p>
+<p>首先，我们新建一个目录来避免把整个serve源码作为服务器</p>
+</li>
+</ol>
+<pre><code class="language-bash">mkdir -p model_store
+mv mnist.mar model_store/
+cd model_store
+# 加 &amp; 代表守护进程方式，退出当前会话后自动关闭，如果一直需要请使用screen，不推荐nohup
+python -m http.server 8090 &amp;
+</code></pre>
+<p>在浏览器打开当前服务器http://ip:8090 可以看到目录结构，以48号服务器做示例 http://211.71.76.189:8090/</p>
+<p><img alt="mkdocs" src="../images/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" /></p>
+<p>最后，我们通过http接口进行模型上传到serve，同方法1中</p>
+<pre><code class="language-bash">curl --location --request POST 'http://211.71.76.189:6081/models?url=http://211.71.76.189:8090/mnist.mar'   
+</code></pre>
+<p>同样查看部署结果</p>
+<pre><code>curl --location --request GET 'http://211.71.76.189:6081/models/'
+</code></pre>
+<p>我们看到输出结果如下</p>
+<pre><code class="language-text">{
+  &quot;models&quot;: [
+    {
+      &quot;modelName&quot;: &quot;greedy_distance&quot;,
+      &quot;modelUrl&quot;: &quot;greedy_distance.mar&quot;
+    },
+    {
+      &quot;modelName&quot;: &quot;greedy_time&quot;,
+      &quot;modelUrl&quot;: &quot;greedy_time.mar&quot;
+    },
+    {
+      &quot;modelName&quot;: &quot;mnist&quot;,
+      &quot;modelUrl&quot;: &quot;http://211.71.76.189:8090/mnist.mar&quot;
+    },
+    {
+      &quot;modelName&quot;: &quot;pointer_net&quot;,
+      &quot;modelUrl&quot;: &quot;pointer_net.mar&quot;
+    }
+  ]
+}
+</code></pre>
+<p>其中mnist是网络位置，而不是本地位置</p>
+<ol>
+<li>
+<p>测试</p>
+<p>首先，模型初始化没有工作线程，我们调整mnist模型worker数量</p>
+</li>
+</ol>
+<pre><code class="language-bash">curl --location --request PUT 'http://211.71.76.189:6081/models/mnist?min_worker=1&amp;max_worker=2'
+</code></pre>
+<p>用这个命令才访问api接口，你会惊喜的发现 报错了，是的 官方提供的代码有bug</p>
+<pre><code># 我们返回serve文件夹
+cd serve 
+# 
+curl http://211.71.76.189:6080/explanations/mnist -T examples/image_classifier/mnist/test_data/0.png
+</code></pre>
+<p>没关系，我们至少完成了全生命周期的流程，这里的bug源自于官方的mnist的handler bug，在接下来的章节，我会介绍如何编写handler，如何查看bug发生在哪里，如何查看日志</p>
+<h3 id="serve-my-own-model">Serve my own model</h3>
+<p>​    是的，如果你完成了上面的操作，你会发现torchsere没有人用的根本原因：资料很少且存在bug</p>
+<p>​    下面我将为你介绍如何编写一个属于自己的代码</p>
+<h4 id="handler">为什么引入handler？</h4>
+<p>​    首先，我们要明白一个道理，我们的模型是无法直接适配到serve，这需要我们提供一个机制，如何去告诉serve我们的模型处理机制，这时候需要引入一个handler，说起来有点乱，我们画一个图来理解</p>
+<p><img alt="mkdocs" src="../images/%E6%A8%A1%E5%9E%8B%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6.png" /></p>
+<p>​    这里仅仅是逻辑层面方便理解，handler文件torch官方提供了一些基础的handler，在文件夹 ts/torch_handler中</p>
+<p>​      </p>
+<p><strong>handler要求必须继承于base_handler.py</strong></p>
+<p>​    base_handler中包含了以下方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initialize</td>
+<td>初始化方法</td>
+<td>用于指定gpu，构造初始模型，加载模型权重，</td>
+</tr>
+<tr>
+<td>preprocess</td>
+<td>预处理方法</td>
+<td>用于对于request加工预处理数据到模型指定格式</td>
+</tr>
+<tr>
+<td>inference</td>
+<td>推理方法（预测）</td>
+<td>用于调用initialize构造后的模型，进行预测</td>
+</tr>
+<tr>
+<td>postprocess</td>
+<td>结果格式化方法</td>
+<td>运行结束时的逻辑，把模型输出结果重新整理成想要的格式</td>
+</tr>
+<tr>
+<td>handle</td>
+<td>推理过程</td>
+<td>组织preprocess，inference，postprocess方法，每当serve遇到一次请求，只指定该方法</td>
+</tr>
+</tbody>
+</table>
+<p>我们查看handle方法源码就可以更好理解该过程</p>
+<pre><code class="language-python">   def handle(self, data, context):
+          &quot;&quot;&quot;Entry point for default handler. It takes the data from the input request and returns
+              the predicted outcome for the input.
+           Args:
+               data (list): The input data that needs to be made a prediction request on.
+               context (Context): It is a JSON Object containing information pertaining to
+                                  the model artefacts parameters.
+           Returns:
+               list : Returns a list of dictionary with the predicted response.
+           &quot;&quot;&quot;
+
+           # It can be used for pre or post processing if needed as additional request
+           # information is available in context
+           start_time = time.time()
+
+           self.context = context
+           metrics = self.context.metrics
+        # 首先进行预处理
+           data_preprocess = self.preprocess(data)
+        # 判断时推断还是解释
+           if not self._is_explain():
+               # 推理
+               output = self.inference(data_preprocess)
+               # 后处理
+               output = self.postprocess(output)
+           else:
+               output = self.explain_handle(data_preprocess, data)
+
+           stop_time = time.time()
+           metrics.add_time('HandlerTime', round(
+               (stop_time - start_time) * 1000, 2), None, 'ms')
+           # 返回结果
+           return output
+</code></pre>
+<p>画图描述handle方法内容</p>
+<p><img alt="mkdocs" src="../images/handle%E6%96%B9%E6%B3%95%E5%86%85%E5%AE%B9.png" /></p>
+<h4 id="model-handler">动手写一个model 和 handler</h4>
+<p>我们从最简单的无参数模型开始写起</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import numpy as np
+
+
+class GreedyTime(nn.Module):
+    '''
+        球面距离贪心策略，无参数
+        输入: 期望到达时间,起点坐标
+    '''
+
+    def __init__(self):
+        super(GreedyTime, self).__init__()
+
+    def forward(self, x):
+        (time_need, start) = x
+        time_need = time_need.argsort()
+        result = [start]
+        for item in time_need:
+            if item != start:
+                result.append(item)
+        return result
+</code></pre>
+<p>对应handler如下</p>
+<pre><code class="language-python">import json
+from torchvision import transforms
+from ts.torch_handler.image_classifier import ImageClassifier
+from ts.torch_handler.base_handler import BaseHandler
+import torch
+import logging
+import time
+import numpy as np
+from scipy.spatial.distance import pdist, squareform
+logger = logging.getLogger(__name__)
+
+
+class Greedy_Hander(BaseHandler):
+
+    def handle(self, data, context):
+        &quot;&quot;&quot;Entry point for default handler. It takes the data from the input request and returns
+           the predicted outcome for the input.
+        Args:
+            data (list): The input data that needs to be made a prediction request on.
+            context (Context): It is a JSON Object containing information pertaining to
+                               the model artefacts parameters.
+        Returns:
+            list : Returns a list of dictionary with the predicted response.
+        &quot;&quot;&quot;
+
+        # It can be used for pre or post processing if needed as additional request
+        # information is available in context
+        start_time = time.time()
+
+        self.context = context
+        metrics = self.context.metrics
+
+        data_preprocess = self.preprocess(data)
+
+        if not self._is_explain():
+            output = self.inference(data_preprocess)
+            output = self.postprocess(output)
+        else:
+            output = self.explain_handle(data_preprocess, data)
+
+        stop_time = time.time()
+        metrics.add_time('HandlerTime', round(
+            (stop_time - start_time) * 1000, 2), None, 'ms')
+        return output
+
+    def inference(self, data, *args, **kwargs):
+        &quot;&quot;&quot;
+        The Inference Function is used to make a prediction call on the given input request.
+        The user needs to override the inference function to customize it.
+        Args:
+            data (Torch Tensor): A Torch Tensor is passed to make the Inference Request.
+            The shape should match the model input shape.
+        Returns:
+            Torch Tensor : The Predicted Torch Tensor is returned in this function.
+        &quot;&quot;&quot;
+        logger.info('Inference come')
+        results = self.model(data, *args, **kwargs)
+        return results
+
+    def postprocess(self, data):
+        &quot;&quot;&quot;
+        The post process function makes use of the output from the inference and converts into a
+        Torchserve supported response output.
+        Args:
+            data (Torch Tensor): The torch tensor received from the prediction output of the model.
+        Returns:
+            List: The post process function returns a list of the predicted output.
+        &quot;&quot;&quot;
+        # logger.info(&quot;spring Data output:&quot;, data.toString())
+        # print(&quot;[MQQ ]&quot;, data)
+        data = torch.tensor(data).tolist()
+        return [data]
+
+    def preprocess(self, data):
+        &quot;&quot;&quot;
+        Preprocess function to convert the request input to a tensor(Torchserve supported format).
+        The user needs to override to customize the pre-processing
+        Args :
+            data (list): List of the data from the request input.
+            [{'body': [[1, 2, 3], [1, 2, 3]]}]
+            the input of your data is this format
+        Returns:
+            tensor: Returns the tensor data of the input
+        &quot;&quot;&quot;
+        # not support batch to deal
+        '''
+            {
+    &quot;feature&quot;: [
+        [
+            463.1333333333333,
+            120.180503,
+            30.323697,
+            5,
+            2.019472122917776,
+            118,
+            196.86666666666667,
+            44.950000000000045
+        ],
+        [
+            463.1333333333333,
+            120.180503,
+            30.323697,
+            5,
+            2.019472122917776,
+            118,
+            196.86666666666667,
+            44.950000000000045
+        ]
+    ],
+    &quot;start&quot;: 1}
+        '''
+        logger.info(&quot;[hander] greedy_time raw data: %s&quot; % str(data))
+        body = data[0].get('body')
+        logger.info(&quot;[hander] greedy_time body type: %s&quot; % str(type(body)))
+        if type(body) == bytearray:
+            # to deal with grpc interface
+            body = bytes(body)
+            body = json.loads(body)
+            logger.info(&quot;[handler] from grpc&quot;)
+        else:
+            logger.info(&quot;[handler] from http api&quot;)
+        logger.info(&quot;[handler] greedy_time body :%s &quot; %str(body))
+        logger.info(&quot;[handler] greedy_time body after type: %s&quot; % str(type(body)))
+        # logger.info(&quot;[handler] greedy_distance input:&quot;, data)
+        feature = body.get('feature')
+        start = body.get('start')
+        # logger.info(&quot;[handler] greedy_distance input:&quot;, data)
+        # 转换feature为 ndarray
+        feature = np.array(feature)
+        # select for the distance of feature
+        # logger.info(&quot;[hander] greedy_distance feature shape :&quot;, feature.shape)
+        logger.info(&quot;[hander] greedy_time feature: %s&quot;, str(feature))
+        feature = feature[:, 0]
+        logger.info(&quot;[hander] greedy_time feature after: %s&quot;, str(feature))
+        # logger.info(&quot;[hander] greedy_distance feature:&quot;, feature)
+        model_input = (feature, start)
+        logger.info(&quot;process ok&quot;)
+        return model_input
+
+
+</code></pre>
+<p>handler中在preprocess中，我们首先约定了输入格式为以下的json串，然后在预处理按照该格式解析</p>
+<pre><code>  {
+    &quot;feature&quot;: [
+        [
+            463.1333333333333,
+            120.180503,
+            30.323697,
+            5,
+            2.019472122917776,
+            118,
+            196.86666666666667,
+            44.950000000000045
+        ],
+        [
+            463.1333333333333,
+            120.180503,
+            30.323697,
+            5,
+            2.019472122917776,
+            118,
+            196.86666666666667,
+            44.950000000000045
+        ]
+    ],
+    &quot;start&quot;: 1
+}
+</code></pre>
+<p>把这两个文件放在example下，类似于quick start 运行打包命令</p>
+<pre><code class="language-bash">torch-model-archiver --model-name greedy_time  --model-file ../serve/examples/image_classifier/greedy_time/greedy_time.py --handler ../serve/examples/image_classifier/greedy_time/greedy_time_handler.py  --runtime python3 --version 1.0
+</code></pre>
+<p>按照quick start方式上传到serve 调用接口</p>
+<pre><code class="language-bash">curl --location --request POST 'http://211.71.76.189:6080/predictions/greedy_time/1.0' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    &quot;feature&quot;: [
+        [
+            463.1333333333333,
+            120.180503,
+            30.323697,
+            5,
+            2.019472122917776,
+            118,
+            196.86666666666667,
+            44.950000000000045
+        ],
+        [
+            463.1333333333333,
+            120.180503,
+            30.323697,
+            5,
+            2.019472122917776,
+            118,
+            196.86666666666667,
+            44.950000000000045
+        ]
+    ],
+    &quot;start&quot;: 1
+}'
+</code></pre>
+<p>得到结果</p>
+<pre><code>[
+  1,
+  0
+]
+</code></pre>
+<h3 id="tips">tips</h3>
+<ol>
+<li>
+<p>模型文件 model.py仅仅只能包含一个类，</p>
+</li>
+<li>
+<p>如果我的模型包括model_layers.py model.py 并且model.py是多个类如何解决？</p>
+</li>
+</ol>
+<p>可以定义一个新文件model_submit.py中 把最终的模型类再封装一层，在打包时指定参数extra-files</p>
+<p><code>bash
+   torch-model-archiver --model-name pointer_net  --model-file ../serve/examples/image_classifier/pointer_net/pointer_net.py \
+       --handler ../serve/examples/image_classifier/pointer_net/pointer_net_handler.py  \
+       --extra-files  ../serve/examples/image_classifier/pointer_net/pointer_net_layers.py  \
+       --runtime python3 --version shanghai</code></p>
+<p>同理，如果模型包括其他配置文件 比如 json yml 等也可以通过extra-files打入mar包</p>
+<p>extra-files 的作用是让该文件一起打包进mar，模型可以访问</p>
+<ol>
+<li>如何查看日志 debug</li>
+</ol>
+<p>以docker方式启动的serve 可以采用 docker logs <container id> -f 查看日志</p>
+<ol>
+<li>如果我需要更多的python包怎么办</li>
+</ol>
+<p>进入容器安装</p>
+<ol>
+<li>为什么我访问接口400 500</li>
+</ol>
+<p>命令存在错误 或者指定的内容非法，查看日志中原因</p>
+<ol>
+<li>为什么我远程加载模型失败，显示本地已经存在一个包</li>
+</ol>
+<p>如果本地存在x.mar则远程无法加载新的同名mar包，原因：serve会下载mar包到本地目录，然后运行，再卸载该模型后会删除本地mar包，因此如果下载显示本地已经存在，则不会继续后续操作</p>
+<ol>
+<li>接口一定用命令行访问吗？</li>
+</ol>
+<p>不一定，因为是http接口，所以任何通过http的方式都可以访问，比如postman、程序代码 都可以</p>
+<ol>
+<li>官方文档在哪里？</li>
+</ol>
+<p>https://pytorch.org/serve/index.html</p>
+<ol>
+<li>如何查看接口？</li>
+</ol>
+<p><img alt="mkdocs" src="../images/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%8E%A5%E5%8F%A3.png" /></p>
+<ol>
+<li>
+<p>如何通过grpc访问？</p>
+<p>查看postrpc项目示例</p>
+</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../1.2%20%E5%88%9D%E6%AD%A5%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 介绍" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              介绍
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../1.4%20%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%8E%A5%E5%8F%A3/" class="md-footer__link md-footer__link--next" aria-label="Next: 1.4 如何添加接口" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              1.4 如何添加接口
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
