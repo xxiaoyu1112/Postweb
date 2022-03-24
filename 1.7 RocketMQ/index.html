@@ -1,0 +1,1115 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>RocketMQ相关资料 - Postweb相关资料</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rocketmq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Postweb相关资料" class="md-header__button md-logo" aria-label="Postweb相关资料" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Postweb相关资料
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RocketMQ相关资料
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Postweb相关资料" class="md-nav__button md-logo" aria-label="Postweb相关资料" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Postweb相关资料
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          1、系统开发手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1、系统开发手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1、系统开发手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1%20%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" class="md-nav__link">
+        1.1 基础理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2%20%E5%88%9D%E6%AD%A5%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+        1.2 初步动手实践
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3%20Torchserve%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        1.3 Torchserve使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4%20%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%8E%A5%E5%8F%A3/" class="md-nav__link">
+        1.4 如何添加接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5%20%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E9%83%A8%E5%88%86/" class="md-nav__link">
+        postweb前后端交互部分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6%20%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="md-nav__link">
+        1.6 消息队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RocketMQ相关资料
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        RocketMQ相关资料
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rocketmq" class="md-nav__link">
+    1. RocketMQ 介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rocketmq" class="md-nav__link">
+    2. RocketMQ 概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rocketmq" class="md-nav__link">
+    3. 为什么要使用 RocketMQ？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 为什么要使用 RocketMQ？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 异步解耦
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 削峰填谷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 分布式事务最终一致性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 数据分发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rocketmq" class="md-nav__link">
+    4. RocketMQ 架构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-rocketmq" class="md-nav__link">
+    5. RocketMQ 消息类型
+  </a>
+  
+    <nav class="md-nav" aria-label="5. RocketMQ 消息类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 普通消息
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 普通消息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    5.1.1 同步发送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    5.1.2 异步发送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    5.1.3 单向发送
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 顺序消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3 定时消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 事务消息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 最佳实践
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 消息重试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 消息过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3 消费模式
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 消费模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631" class="md-nav__link">
+    6.3.1 集群消费
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632" class="md-nav__link">
+    6.3.2 广播消费：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4 消费幂等
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 本地事务消息封装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.消息被消费了，我怎么知道？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          2、系统部署手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2、系统部署手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2、系统部署手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1%20%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        2.1 系统部署相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2%20%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        2.2 系统部署手册
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          3、系统使用手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3、系统使用手册" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3、系统使用手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1%20%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        3.1 模型部署说明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rocketmq" class="md-nav__link">
+    1. RocketMQ 介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rocketmq" class="md-nav__link">
+    2. RocketMQ 概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rocketmq" class="md-nav__link">
+    3. 为什么要使用 RocketMQ？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 为什么要使用 RocketMQ？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 异步解耦
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 削峰填谷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 分布式事务最终一致性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 数据分发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rocketmq" class="md-nav__link">
+    4. RocketMQ 架构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-rocketmq" class="md-nav__link">
+    5. RocketMQ 消息类型
+  </a>
+  
+    <nav class="md-nav" aria-label="5. RocketMQ 消息类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 普通消息
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 普通消息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    5.1.1 同步发送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    5.1.2 异步发送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    5.1.3 单向发送
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 顺序消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3 定时消息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 事务消息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 最佳实践
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 消息重试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 消息过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3 消费模式
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 消费模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631" class="md-nav__link">
+    6.3.1 集群消费
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632" class="md-nav__link">
+    6.3.2 广播消费：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4 消费幂等
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 本地事务消息封装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.消息被消费了，我怎么知道？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="rocketmq">RocketMQ相关资料</h1>
+<h2 id="1-rocketmq">1. RocketMQ 介绍</h2>
+<p>Apache RocketMQ 是一款 <code>低延迟、高并发、高可用、高可靠</code>的分布式消息中间件。消息队列 RocketMQ 可为分布式应用系统提供异步解耦和削峰填谷的能力，同时也具备互联网应用所需的<code>海量消息堆积、高吞吐、可靠重试</code>等特性。</p>
+<h2 id="2-rocketmq">2. RocketMQ 概念</h2>
+<ul>
+<li>Topic：消息主题，用于将一类的消息进行归类，比如订单主题，就是所有订单相关的消息都可以由这个主题去承载，生产者向这个主题发送消息。</li>
+<li>生产者：负责生产消息并发送消息到 Topic 的角色。</li>
+<li>消费者：负责从 Topic 接收并消费消息 的角色。</li>
+<li>消息：生产者向 Topic 发送的内容，会被消费者消费。</li>
+<li>消息属性：生产者发送的时候可以为消息自定义一些业务相关的属性，比如 Message Key 和 Tag 等。</li>
+<li>Group：一类生产者或消费者，这类生产者或消费者通常生产或消费同一类消息，且消息发布或订阅的逻辑一致。</li>
+</ul>
+<h2 id="3-rocketmq">3. 为什么要使用 RocketMQ？</h2>
+<h3 id="31">3.1 异步解耦</h3>
+<p>随着微服务架构的流行，服务之间的关系梳理非常重要。<code>异步解耦可以降低服务之间的耦合程度，同时也能提高服务的吞吐量</code>。</p>
+<p>使用异步解耦的业务场景非常多，因为每个行业的业务都会不太一样，以一些比较通用的业务来说明相信大家都能理解。</p>
+<p>比如电商行业的下单业务场景，以最简单的下单流程来说，下单流程如下：</p>
+<ol>
+<li>锁库存</li>
+<li>创建订单</li>
+<li>用户支付</li>
+<li>扣减库存</li>
+<li>给用户发送购买短信通知</li>
+<li>给用户增加积分</li>
+<li>通知商家发货</li>
+</ol>
+<p>我们以下单成功后，用户进行支付，支付完成会有个逻辑叫支付回调，在回调里面需要去做一些业务逻辑。首先来看下同步处理需要花费的时间，如下图：</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125730525-1943622977.png" /></p>
+<p>上面的下单流程从 3 到 5 都是可以采用异步流程进行处理，对于用户来说，支付完成后他就不需要关注后面的流程了。后台慢慢处理就行了，这样就能简化三个步骤，提高回调的处理时间。</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125748327-1286177978.png" /></p>
+<h3 id="32">3.2 削峰填谷</h3>
+<p>削峰填谷指的是在大流量的冲击下，利用 RocketMQ 可以抗住瞬时的大流量，保护系统的稳定性，提升用户体验。</p>
+<p>在电商行业，最常见的流量冲击就是秒杀活动了，这是就可以利用 RocketMQ 来扛住高并发，<strong>前提是业务场景支持异步处理</strong>。</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125801108-1511508746.png" /></p>
+<h3 id="33">3.3 分布式事务最终一致性</h3>
+<p>众所周知，分布式事务有 2PC，TCC，最终一致性等方案。其中使用消息队列来做最终一致性方案是比较常用的。</p>
+<p>在电商的业务场景中，交易相关的核心业务一定要确保数据的一致性。通过引入消息队列 RocketMQ 版的分布式事务，既可以实现系统之间的解耦，又可以保证最终的数据一致性。</p>
+<h3 id="34">3.4 数据分发</h3>
+<p>数据分发指的是可以将原始数据分发到多个需要使用这份数据的系统中，实现数据异构的需求。最常见的有将数据分发到 ES, Redis 中为业务提供搜索，缓存等服务。</p>
+<p>除了手动通过消息机制进行数据分发，还可以订阅 Mysql 的 binlog 来分发，在分发这个场景，需要使用 RocketMQ 的顺序消息来保证数据的一致性。</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125812416-1220685107.png" /></p>
+<h2 id="4-rocketmq">4. RocketMQ 架构</h2>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125822931-1511815698.png" /></p>
+<p>图片来源阿里云官方文档</p>
+<ul>
+<li>Name Server：是一个几乎无状态节点，可集群部署，在消息队列 RocketMQ 版中提供命名服务，更新和发现 Broker 服务。就是一个注册中心。</li>
+<li>Broker：消息中转角色，负责存储消息，转发消息。分为 Master Broker 和 Slave Broker，一个 Master Broker 可以对应多个 Slave Broker，但是一个 Slave Broker 只能对应一个 Master Broker。Broker 启动后需要完成一次将自己注册至 Name Server 的操作；随后每隔 30s 定期向 Name Server 上报 Topic 路由信息。</li>
+<li>生产者：与 Name Server 集群中的其中一个节点（随机）建立长链接（Keep-alive），定期从 Name Server 读取 Topic 路由信息，并向提供 Topic 服务的 Master Broker 建立长链接，且定时向 Master Broker 发送心跳。</li>
+<li>消费者：与 Name Server 集群中的其中一个节点（随机）建立长连接，定期从 Name Server 拉取 Topic 路由信息，并向提供 Topic 服务的 Master Broker、Slave Broker 建立长连接，且定时向 Master Broker、Slave Broker 发送心跳。Consumer 既可以从 Master Broker 订阅消息，也可以从 Slave Broker 订阅消息，订阅规则由 Broker 配置决定。</li>
+</ul>
+<h2 id="5-rocketmq">5. RocketMQ 消息类型</h2>
+<p>RocketMQ 支持丰富的消息类型，可以满足多场景的业务需求。不同的消息有不同的应用场景，下面为大家介绍常用的四种消息类型。</p>
+<h3 id="51">5.1 普通消息</h3>
+<p>普通消息是指 RocketMQ 中无特性的消息。当没有特殊的业务场景，使用普通消息就够了。如果有特殊的场景，就可以使用特殊的消息类型，比如顺序，事务等。</p>
+<h4 id="511">5.1.1 同步发送</h4>
+<p>同步发送：消息发送方发送出去一条消息，会同步得到服务端返回的结果。</p>
+<h4 id="512">5.1.2 异步发送</h4>
+<p>异步发送：消息发送方发出去一条消息，不用等待服务端返回结果，可以接着发送下一条消息。发送方可以通过回调接口接收服务端响应，并处理响应结果。</p>
+<h4 id="513">5.1.3 单向发送</h4>
+<p>单向发送：消息发送方只负责发送消息，发送出去后就不管了，这种方式发送速度非常快，存在丢失消息的风险。</p>
+<h3 id="52">5.2 顺序消息</h3>
+<p>顺序消息是指生产者按照一定的先后顺序发布消息；消费者按照既定的先后顺序订阅消息，即先发布的消息一定会先被消费者接收到。</p>
+<p>比如数据分发的场景，如果我们订阅了 Mysql 的 binlog 来进行数据异构。消息要是没有顺序，就会出现数据错乱问题。</p>
+<p>比如新增一条 id=1 的数据，然后马上删除。这样就产生了两条消息。正常的消费顺序是先新增，然后删除，此时数据是没有的。如果消息没有顺序，删除的先被消费了，然后消费新增的，此时数据还在，没被删除掉，就会导致不一致。</p>
+<h3 id="53">5.3 定时消息</h3>
+<p>定时消息是指消息具备定时发送的功能，当消息发送到服务端后，不会立即投递给消费者。而是要等到消息指定的时间后才会投递给消费者进行消费。</p>
+<p>延迟消息也就是定时消息，定时消息是定在某个时间点进行发送，比如 2020-11-11 12:00:00 发送。</p>
+<p>延迟消息一般是在当前发送时间的基础上延迟多久进行发送，比如当前时间是 2020-09-10 12:00:00，延迟 10 分钟，那么消息发送成功后将在 2020-09-10 12:10:00 进行投递给消费者。</p>
+<p>定时消息可以在订单超时未支付自动取消等场景使用。</p>
+<h3 id="54">5.4 事务消息</h3>
+<p>RocketMQ 提供类似 X/Open XA 的分布式事务功能，通过 RocketMQ 事务消息能达到分布式事务的最终一致。</p>
+<p>交互流程：</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125837849-1500946174.png" /></p>
+<p>图片来源阿里云官方文档</p>
+<ol>
+<li>发送方首先发送半事务消息到 RocketMQ 服务端。</li>
+<li>RocketMQ 服务端接收到消息，然后将消息持久化成功之后，向发送方返回 Ack 确认消息已经发送成功，此时消息为半事务消息，不会投递给消费方。</li>
+<li>收到半事务消息的 Ack 后，发送方开始执行本地事务逻辑。</li>
+<li>发送方根据本地事务执行结果向服务端提交二次确认，如果本地事务执行成则进行消息的 Commit，如果执行失败则进行消息的 Rollback，服务端收到 Commit 状态则将半事务消息标记为可投递，消费方最终将收到该消息；服务端收到 Rollback 状态则删除半事务消息，消费方将不会收到该消息。</li>
+<li>如果出现意外情况，步骤 4 没有进行消息的二次确认，等待固定时间后服务端将对该消息发起消息回查。</li>
+<li>发送方收到消息回查后，需要检查对应消息的本地事务执行的最终结果。发送方根据检查得到的本地事务的最终状态再次提交二次确认，服务端仍按照步骤 4 对半事务消息进行操作。</li>
+</ol>
+<h2 id="6">6. 最佳实践</h2>
+<h3 id="61">6.1 消息重试</h3>
+<p>消息在消费方消费失败后，RocketMQ 服务端会重新进行消息的投递，知道消费者成功消费消息，当然重试有次数限制，默认 16 次。</p>
+<p>消息重试在一定程度上保证了消息不丢失，通过重试来达到最终被消费的目的。需要注意的是消费者在消费的时候一定要等本地业务成功后才能进行 ACK(消费确认)，不然就会出现消费失败，但是已经 ACK，消息将不会重复投递。</p>
+<p>如果采取异步消费的方式，需要进行异步转同步，等异步操作完才进行 ACK，具体可以参考这篇文章https://mp.weixin.qq.com/s/Bbh1GDpmkLhZhw5f0POJ2A。</p>
+<p>最后需要做好对应的监控，如果重试了 4，5 次还是失败的，基本上后面重试也是失败的。这个时候需要让开发人员知道，该人工处理的就人工介入。或者直接监控死信队列。</p>
+<h3 id="62">6.2 消息过滤</h3>
+<p>消息主题，一般用于一类消息的统一分类。比如订单主题，但是订单下的消息会分为很多种。比如创建订单，取消订单等。</p>
+<p>不同类型的消息有不同的业务处理，我们可以统一定义消息格式，然后通过一个字段去区分消息类型来做不同的业务逻辑。不好的点在于所有消息都会推送到消费方，不能按需消费。</p>
+<p>在 RocketMQ 中可以给消息指定 tag，通过 tag 来区分消息类型。消费者可以根据 Tag 在 RocketMQ 服务端完成消息过滤，以确保消费者最终只消费到其关注的消息类型。</p>
+<p>我曾经遇到过一个 tag 没有正确使用的方式，只有一个 MQ 实例，用 tag 来区分环境。所有消息都在一个主题中，测试环境消费测试环境的 tag，线上消费线上的 tag。</p>
+<p>这种方式的问题在于消息没做隔离，线上线下的消息都在一起。另一个就是 tag 被固定成了环境的区分，无法用于消息类型场景，导致只能建多个 topic 来承载多个业务消息类型。</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125851664-768967925.png" /></p>
+<h3 id="63">6.3 消费模式</h3>
+<p>RocketMQ 消费模式有两种，集群消费和广播消费。</p>
+<h4 id="631">6.3.1 集群消费</h4>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125900932-1241815617.png" /></p>
+<p>消费者部署了多个实例我们称之为一个集群，集群消费只会被其中的某一个实例进行消费。</p>
+<p>适合大部分的业务场景，大部分的场景我们的消息只允许被消费一次，而且只能有一个消费者去消费，比如支付回调场景，如果一个消息被多个实例同时消费，那么就会出现同时去修改订单状态，同时去扣减库存的情况。</p>
+<h4 id="632">6.3.2 广播消费：</h4>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125908976-2077137856.png" /></p>
+<p>广播消费会让集群中每个实例都消费一次。</p>
+<p>比如我们使用了本地缓存，当数据变更的时候，我们需要刷新每个节点本地的缓存，所以每个节点都需要收到消息。</p>
+<h3 id="64">6.4 消费幂等</h3>
+<p>幂等问题，无论是在 API 请求场景还是在消息消费场景，都会遇到。一条消息不能重复消费多次这个肯定是要保证的，因为我们不能保证消息发送方不发送多次，也不能保证消息不重复投递。</p>
+<p>RocketMQ 的 Exactly-Once 投递语义，就是用于解决幂等问题。Exactly-Once 是指发送到消息系统的消息只能被消费端处理且仅处理一次，即使生产端重试消息发送导致某消息重复投递，该消息在消费端也只被消费一次。</p>
+<p>最佳的幂等处理方式还是需要有一个唯一的业务标识，虽然每条消息都有 MessageId，但是不建议用 MessageId 来做幂等判断，在发送消息的时候，可以为每条消息设置一个 MessageKey，这个 MessageKey 就可以用来做业务的唯一标识。</p>
+<p>关于幂等怎么处理，可以参考这篇文章https://mp.weixin.qq.com/s/9fhqnbeXPz7-7x0Eadd8DA，通用的幂等实现方案。</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125918497-160615648.png" /></p>
+<h2 id="7">7. 本地事务消息封装</h2>
+<p>上面介绍了事务消息，RocketMQ 的事务消息采用了二阶段提交的方式。并且结合了消息反查的机制来确保最终一致性。</p>
+<p>从使用层面来说，每个业务场景都要去实现一个反查的逻辑，有点烦。</p>
+<p>下面介绍另一种经常被使用的方式，就是本地事务消息。本地消息表这个方案最初是 ebay 提出的，本地事务消息需要在服务对应的数据库中创建一个消息表，发送消息的时候不是真正的将消息发送给 MQ，而是往消息表中插入一条消息数据。</p>
+<p>插入的动作跟本地的业务逻辑是同一个事务，如果本地事务执行成功，消息才会落表成功，才会发送给 MQ, 本地事务失败，消息数据回滚。</p>
+<p>然后需要有一个专门的程序去拉取消息表中未发送的消息投递给 MQ，如果投递失败，可以一直重试，直到成功或者人工介入。</p>
+<p><img alt="img" src="https://img2020.cnblogs.com/blog/1618095/202009/1618095-20200915125927311-61209655.png" /></p>
+<p>消息写到消息表，然后会一直给 MQ 发送，这个步骤没问题。如果 MQ 收到消息后，消息还在 PageCache 中的时候，Broker 宕机了，这个时候是会出现消息丢失。当然你也可以使用同步刷盘等方式来避免丢失。假如我们就是异步刷盘，有办法保证消息不丢失吗？</p>
+<p>前面我们提到，RocketMQ 的事务消息会有回查的机制，消息表的方式，也需要有一个机制来保证消息被消费了，否则就需要不断的重试去发送消息，直到消息被消费。</p>
+<p>在消息表中需要有一个字段来标识当前这条消息的状态，比如 未发送，已发送，已消费。当消息还是未发送的时候就会被发送到 MQ, 如果发送成功了，状态就是已发送。但是过了几分钟，状态还是已发送，这个时候就要去做一些动作了。</p>
+<p>这个场景下，有可能是消费者跟不上生产的速度，消息堆积了，导致消息一直没被消费。另一种可能就是消息是不是丢失了？</p>
+<p>可以获取对应的消息堆积数据来判断是否消息堆积了，如果不是就重新发送消息给 MQ，知道消息被消费。</p>
+<h2 id="8">8.消息被消费了，我怎么知道？</h2>
+<p>根据消息轨迹就可以知道消息有没有被消费，到此为止流程结束。消息发送给 MQ 如果失败会重试，消息如果长时间没消费，也会重新发送，即使最后进入了死信队列，也可以通过死信队列的监控来人工干预，一定会是最终一致性。</p>
+<p>跟自带的事务消息比，本地消息表的方式不需要实现回查逻辑，但是要增加消息表，同时也要配套各种发送，检查等逻辑，也挺麻烦了。特别是当消息量大的时候，如何快速的将消息表中的消息发送出去，也需要做很多处理，简单的查表轮询在量大的情况下不太适用。</p>
+<p>两种方式都可以使用，能实现我们要的目的即可。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../1.6%20%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1.6 消息队列" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              1.6 消息队列
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../2.1%20%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="md-footer__link md-footer__link--next" aria-label="Next: 2.1 系统部署相关知识" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2.1 系统部署相关知识
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

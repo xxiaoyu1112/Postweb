@@ -13,7 +13,7 @@
     
     
       
-        <title>揽件平台 - Postweb相关资料</title>
+        <title>1.6 消息队列 - Postweb相关资料</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#mq" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              揽件平台
+              1.6 消息队列
             
           </span>
         </div>
@@ -191,12 +191,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -287,11 +289,68 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.6%20%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.6 消息队列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.6 消息队列
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mq" class="md-nav__link">
+    mq 消息队列
+  </a>
+  
+    <nav class="md-nav" aria-label="mq 消息队列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.概念：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.使用场景
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -452,23 +511,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    算法接入
+  <a href="#mq" class="md-nav__link">
+    mq 消息队列
+  </a>
+  
+    <nav class="md-nav" aria-label="mq 消息队列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.概念：
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    算法管理
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.使用场景
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    算法调用
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -486,27 +551,23 @@
                 
 
 
-  <h1>揽件平台</h1>
+  <h1>1.6 消息队列</h1>
 
-<p>首先揽件平台前端部署在211.71.76.189服务器上</p>
-<h4 id="_1">算法接入</h4>
-<p>如果需要接入模型到该平台(可以是任何torch算法)</p>
-<p>首先需要打包成为mar包，打包部分有一个文档介绍</p>
-<p>默认使用者得到了mar包程序，把mar包放在任意网络位置http服务或者在189 服务器/data/MengQingqiang/rpc/model_store路径下</p>
-<p>导入到系统：如果采用http服务 就是全路径  如果采用放在服务器本地 就是文件名</p>
-<p>方式1. 采用torchserve api :</p>
-<p><img alt="mkdocs" src="../images/torchserve%20api.png" /></p>
-<p>方式2. 前端(尚未支持)</p>
-<p><img alt="mkdocs" src="../images/%E5%89%8D%E7%AB%AF%28%E5%B0%9A%E6%9C%AA%E6%94%AF%E6%8C%81%29.png" /></p>
-<p>方式3.postapi(等待前端部署)</p>
-<p><img alt="mkdocs" src="../images/postapi%28%E7%AD%89%E5%BE%85%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2%29.png" /></p>
-<h4 id="_2">算法管理</h4>
-<p><img alt="mkdocs" src="../images/%E7%AE%97%E6%B3%95%E7%AE%A1%E7%90%86.png" /></p>
-<p>该界面包含模型模型的卸载、实例调整等功能</p>
-<h4 id="_3">算法调用</h4>
-<p>调用原生torchserve http api</p>
-<p><img alt="mkdocs" src="../images/%E8%B0%83%E7%94%A8%E5%8E%9F%E7%94%9Ftorchserve%20http%20api.png" /></p>
-<p>参考文档 https://pytorch.org/serve/inference_api.html#predictions-api</p>
+<h2 id="mq">mq 消息队列</h2>
+<h3 id="1">1.概念：</h3>
+<ul>
+<li>mq：分布消息队列，它是应用之间异步通信的一种方式</li>
+<li>主要是由三个部分组成：</li>
+<li>生产者：主要负责消息所承载业务信息的一个实例化，它是整个消息的发起方，</li>
+<li>broker： 整个消息的服务端，是一种代理方式，主要是处理消息单元，负责消息的存储、投递、以及队列的一些其他附加的功能的实现。它是整个消息队列中最核心的组成部分</li>
+<li>消费者：主要负责消息的消费，根据消息所承载的具体信息去处理各种业务逻辑</li>
+</ul>
+<h3 id="2">2.使用场景</h3>
+<ul>
+<li>异步处理</li>
+<li>应用解耦</li>
+<li>流量削峰</li>
+</ul>
 
               
             </article>
@@ -516,6 +577,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../1.5%20%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E9%83%A8%E5%88%86/" class="md-footer__link md-footer__link--prev" aria-label="Previous: postweb前后端交互部分" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              postweb前后端交互部分
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../1.7%20RocketMQ/" class="md-footer__link md-footer__link--next" aria-label="Next: RocketMQ相关资料" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              RocketMQ相关资料
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
