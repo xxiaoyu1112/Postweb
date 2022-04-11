@@ -13,7 +13,7 @@
     
     
       
-        <title>实验室GO环境相关资料 - Postweb相关资料</title>
+        <title>代码问题讨论记录二 - Postweb相关资料</title>
       
     
     
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              实验室GO环境相关资料
+              代码问题讨论记录二
             
           </span>
         </div>
@@ -191,12 +191,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -315,11 +317,143 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.8%20%E4%BB%A3%E7%A0%81%E9%97%AE%E9%A2%98%E8%AE%A8%E8%AE%BA%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          代码问题讨论记录二
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         代码问题讨论记录二
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-api" class="md-nav__link">
+    1. 地图api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.分页问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.前后端交流需要加密处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4nginx" class="md-nav__link">
+    4.Nginx查看服务器运行状态
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.用来测试的地方
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6torchserve" class="md-nav__link">
+    6.torchserve 代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 单元测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.目前需要做的事情
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9dockerrocketmq" class="md-nav__link">
+    9.docker上运行rocketmq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-torchserve" class="md-nav__link">
+    10. 运行torchserve命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-torchserve" class="md-nav__link">
+    11. 注册torchserve网络模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-docker" class="md-nav__link">
+    12. 以docker形式重新部署前端代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    13.新服务器部署时的运行问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14docker" class="md-nav__link">
+    14.docker启动服务并远程访问
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -458,6 +592,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -466,83 +602,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    数据库设计
+  <a href="#1-api" class="md-nav__link">
+    1. 地图api
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    docker
+  <a href="#2" class="md-nav__link">
+    2.分页问题
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#redis" class="md-nav__link">
-    运行redis命令
+  <a href="#3" class="md-nav__link">
+    3.前后端交流需要加密处理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rocketmq" class="md-nav__link">
-    运行RocketMQ指令
+  <a href="#4nginx" class="md-nav__link">
+    4.Nginx查看服务器运行状态
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hbase-docker" class="md-nav__link">
-    Hbase Docker
-  </a>
-  
-    <nav class="md-nav" aria-label="Hbase Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hbase-dashboard" class="md-nav__link">
-    Hbase Dashboard
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    Mysql
+  <a href="#5" class="md-nav__link">
+    5.用来测试的地方
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-root" class="md-nav__link">
-    docker root
+  <a href="#6torchserve" class="md-nav__link">
+    6.torchserve 代码
   </a>
-  
-    <nav class="md-nav" aria-label="docker root">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#torchserve" class="md-nav__link">
-    运行torchserve 命令
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    恢复容器
+  <a href="#7" class="md-nav__link">
+    7. 单元测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.目前需要做的事情
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9dockerrocketmq" class="md-nav__link">
+    9.docker上运行rocketmq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-torchserve" class="md-nav__link">
+    10. 运行torchserve命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-torchserve" class="md-nav__link">
+    11. 注册torchserve网络模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-docker" class="md-nav__link">
+    12. 以docker形式重新部署前端代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    13.新服务器部署时的运行问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14docker" class="md-nav__link">
+    14.docker启动服务并远程访问
   </a>
   
 </li>
@@ -561,145 +713,174 @@
                 
 
 
-  <h1>实验室GO环境相关资料</h1>
+<h1 id="_1">代码问题讨论记录二</h1>
+<h2 id="1-api">1. 地图api</h2>
+<p>高德地图API操作：</p>
+<p>https://lbs.amap.com/api/jsapi-v2/guide/services/autocomplete</p>
+<p>https://lbs.amap.com/api/jsapi-v2/guide/services/autocomplete</p>
+<h2 id="2">2.分页问题</h2>
+<p>前端分页从1开始，后端分页从0开始，所以前端减一</p>
+<p>mangodb的分页问题</p>
+<h2 id="3">3.前后端交流需要加密处理</h2>
+<p>如果有服务放在公网，底层服务放在另一个网站，需要通过http服务进行交流，则需要进行加密处理</p>
+<p>加密处理： 时间戳 + ？？？ hd5加密</p>
+<h2 id="4nginx">4.Nginx查看服务器运行状态</h2>
+<pre><code class="language-bash">service nginx status
+</code></pre>
+<p>本系统中nginx服务的作用：</p>
+<ul>
+<li>前后端请求重定向</li>
+</ul>
+<p>nginx配置文件：</p>
+<p>/etc/nginx/nginx.conf</p>
+<h2 id="5">5.用来测试的地方</h2>
+<ul>
+<li>MySQL数据库的查询</li>
+<li>数据处理进度</li>
+</ul>
+<h2 id="6torchserve">6.torchserve 代码</h2>
+<p>模型位置：</p>
+<pre><code>/data/MengQingqiang/postweb/serve/examples/image_classifier/greedy_time
+</code></pre>
+<p>torchserve 的debug 过程：</p>
+<pre><code>docker ps
+# 选择torchserve容器
+docker logs 容器id -f
 
-<p>实验室GO环境相关资料</p>
-<p>go 安装位置 /usr/local/go</p>
-<p>已经安装了grpc</p>
-<p>consul 是一个xDS软件，可以作服务发现</p>
-<p>envoy 是一个代理软件，包括负载均衡等策略</p>
-<h4 id="_1">数据库设计</h4>
-<p>|id| task_id| uid|time_tag|region_tag|arrive_time|region_type|</p>
-<pre><code>下单时间 
-经度 
-纬度 
-区块类型 
-与所在订单的直线相对距离  
-与前一单的直线绝对距离 
-预约-接单 
-预约-当前
-</code></pre>
-<p>day_tag,</p>
-<p>20210401,13584,上海市,2208775596316,2021-04-01 08:57:20,2021-04-01 11:00:00,2021-04-01 13:00:00,121.513188,31.308708000000006,24567482,3110,居民区,2021-04-01 12:03:42,,,,,,,,</p>
-<h4 id="docker">docker</h4>
-<p>docker 查看日志</p>
-<p>docker container logs</p>
-<p>docker exec -it  <id> bash</p>
-<p>5a20ed4f947b</p>
-<p>docker exec -it f9e79c4c1448 bash</p>
-<h4 id="redis">运行redis命令</h4>
-<pre><code class="language-bash">docker run --name postredis -d -p 6379:6379 redis
-</code></pre>
-<h4 id="rocketmq">运行RocketMQ指令</h4>
-<pre><code class="language-bash"># mq workspace
-MQ_SPACE=$(dirname $(readlink -f &quot;$0&quot;))
-echo MQ_SPACE:$MQ_SPACE
-# make if absent
-if [  ! -d $MQ_SPACE/namesrv/logs ]; then
-  mkdir -p $MQ_SPACE/namesrv/logs
-fi
-# make if absent
-if [  ! -d $MQ_SPACE/namesrv/store ]; then
-  mkdir -p $MQ_SPACE/namesrv/store
-fi
-# run namesrv
-docker run -d -p 9876:9876 -v $MQ_SPACE/namesrv/logs:/root/logs -v $MQ_SPACE/namesrv/store:/root/store --name rmqnamesrv -e &quot;MAX_POSSIBLE_HEAP=100000000&quot; rocketmqinc/rocketmq sh mqnamesrv
+# 查看最后多少行
+docker logs 容器id  -n 行数
 
-# make if absent
-if [  ! -d $MQ_SPACE/broker/logs ]; then
-  mkdir -p $MQ_SPACE/broker/logs
-fi
-# make if absent
-if [  ! -d $MQ_SPACE/broker/store ]; then
-  mkdir -p $MQ_SPACE/broker/store
-fi
-# run broker
-docker run -d -p 10911:10911 -p 10909:10909 -v  $MQ_SPACE/broker/logs:/root/logs -v  $MQ_SPACE/broker/store:/root/store -v  $MQ_SPACE/broker.conf:/opt/rocketmq/conf/broker.conf --link rmqnamesrv:namesrv -e &quot;NAMESRV_ADDR=211.71.76.189:9876&quot; -e &quot;MAX_POSSIBLE_HEAP=200000000&quot; rocketmqinc/rocketmq sh mqbroker -c /opt/rocketmq/conf/broker.conf
-# console
-docker run -d --name rocketmq-dashboard -e &quot;JAVA_OPTS=-Drocketmq.namesrv.addr=211.71.76.189:9876&quot; -p 8088:8080 -t apacherocketmq/rocketmq-dashboard:latest
 </code></pre>
+<p>torchserve 打包时注意采用pip 或者conda的方式安装，避免采用yum apt-get等方式绑定到系统python而非conda虚拟环境python </p>
+<h2 id="7">7. 单元测试</h2>
+<p>文件名必须以   _test   结尾，方法名必须 Test 开头</p>
+<h2 id="8">8.目前需要做的事情</h2>
+<p>流程：</p>
+<ul>
+<li>写一个模型</li>
+<li>打包成mar形式</li>
+</ul>
+<h2 id="9dockerrocketmq">9.docker上运行rocketmq</h2>
+<p>vm是我本地的虚拟机。。。。</p>
+<p>运行nameserver</p>
+<pre><code class="language-bash">docker run --name rmqnamesrv  -d \
+-p 9876:9876 \
+--privileged=true \
+--restart=always \
+-m 1g \
+-v /home/vm/postweb/mq/namesrv/logs:/root/logs \
+-v /home/vm/postweb/mq/namesrv/store:/root/store \
+-e &quot;MAX_POSSIBLE_HEAP=100000000&quot; \
+rocketmqinc/rocketmq sh mqnamesrv
+</code></pre>
+<p>运行broker</p>
+<pre><code class="language-bash">docker run --name rmqbroker -d \
+-p 10909:10909 \
+-p 10911:10911 \
+--privileged=true \
+--restart=always \
+-m 1g \
+-v  /home/vm/postweb/mq/broker/logs:/root/logs \
+-v  /home/vm/postweb/mq/broker/store:/root/store \
+-v  /home/vm/postweb/mq/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf \
+--link rmqnamesrv:namesrv \
+-e &quot;NAMESRV_ADDR=namesrv:9876&quot; \
+-e &quot;MAX_POSSIBLE_HEAP=200000000&quot; \
+rocketmqinc/rocketmq sh mqbroker -c /opt/rocketmq-4.4.0/conf/broker.conf
+</code></pre>
+<p>运行 dashboard</p>
+<pre><code class="language-bash">docker run -d --name rocketmq-dashboard -e &quot;JAVA_OPTS=-Drocketmq.namesrv.addr=10.126.7.188:9876&quot; -p 8088:8080 -t apacherocketmq/rocketmq-dashboard
+</code></pre>
+<pre><code class="language-bash">docker run -d -p 10911:10911 -p 10909:10909 -v  /data/MengQingqiang/postweb/mq/broker/logs:/root/logs -v  /data/MengQingqiang/postweb/mq/broker/store:/root/store -v  /data/MengQingqiang/postweb/mq/broker.conf:/opt/rocketmq/conf/broker.conf --name rmqbroker --link rmqnamesrv:namesrv -e &quot;NAMESRV_ADDR=namesrv:9876&quot; -e &quot;MAX_POSSIBLE_HEAP=200000000&quot; rocketmqinc/rocketmq sh mqbroker -c /opt/rocketmq/conf/broker.conf
+</code></pre>
+<h2 id="10-torchserve">10. 运行torchserve命令</h2>
+<p>第一次运行</p>
+<pre><code>docker run -d --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /home/vm/rpc/model_store:/tmp/models torchserver:v1.2.1 torchserve --start --model-store /tmp/models/ --no-config-snapshots
+</code></pre>
+<p>在本地虚拟机上运行：</p>
+<pre><code>docker run --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /home/vm/rpc/model_store:/tmp/models torchserver:v1.2.1 torchserve --start --model-store /tmp/models/ --models echo.mar --no-config-snapshots
+</code></pre>
+<h2 id="11-torchserve">11. 注册torchserve网络模型</h2>
+<p>需要修改部署的docker容器与外部虚拟机共享同一个ip</p>
+<h2 id="12-docker">12. 以docker形式重新部署前端代码</h2>
+<p>例子：其他项目的dockerfile</p>
+<pre><code class="language-bash"># 基础 image
+FROM node
+
+# 设置项目目录
+WORKDIR /usr/src/app
+
+# 安装项目依赖
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+EXPOSE 8080
+
+# 运行
+CMD [ &quot;npm&quot;, &quot;run&quot;, &quot;serve&quot;]
+</code></pre>
+<p>参考网址：</p>
+<pre><code>https://juejin.cn/post/7000579016147075079
+</code></pre>
+<p>问题： </p>
+<p><strong>全局安装Vue CLI：npm install -g @vue/cli   失败！！！</strong></p>
+<pre><code>解决办法步骤如下：
+进入终端，依次输入一下命令
+（1）创建global安装任务的目录
+mkdir ~/.npm-global
+（2）配置npm使用新的目录
+npm config set prefix '~/.npm-global'
+（3）在~/.profile文件中增加配置
+export PATH=~/.npm-global/bin:$PATH
+（4）配置文件立即生效
+source ~/.profile
+（5）重新执行命令
+npm install -g xxxx 
+npm install -g @vue/cli
+</code></pre>
+<p>创建.dockerignore文件</p>
+<pre><code>node_modules
+.git
+.gitignore
+复制代码
+</code></pre>
+<p>构建Docker image</p>
+<pre><code>docker build -t postweb:dev .
+</code></pre>
+<p>运行</p>
+<pre><code>docker run -v ${PWD}:/app -v /app/node_modules -p 8081:8080 postweb:dev
+</code></pre>
+<p>Tips:</p>
+<p>1.docker run 创建一个基于postweb:dev镜像的容器并运行</p>
+<p>2.<code>-v ${PWD}:/app</code> 挂载当前项目目录到容器内的/app文件夹</p>
 <blockquote>
-<p>监控地址http://211.71.76.189:8088/#/topic</p>
+<p>windows用户可能不支持${PWD}，请使用绝对路径代替</p>
 </blockquote>
-<h4 id="hbase-docker">Hbase Docker</h4>
-<p>https://cloud.tencent.com/developer/article/1632053</p>
-<pre><code>docker run -d -h docker-hbase \
-        -p 2181:2181 \
-        -p 8011:8080 \
-        -p 8085:8085 \
-        -p 9090:9090 \
-        -p 9000:9000 \
-        -p 9095:9095 \
-        -p 16000:16000 \
-        -p 16010:16010 \
-        -p 16201:16201 \
-        -p 16301:16301 \
-        -p 16020:16020\
-        --name hbase \
-        harisekhon/hbase:1.4
+<p>3.<code>-v /app/node_modules</code> 这个必要的，因为我们要用容器内的node_modules依赖，前面我们我们已经将项目目录<code>${PWD}:/app</code>挂载，所以我们要创建这个匿名卷，防止使用项目目录的node_modules。</p>
+<p>4.<code>-p 8081:8080</code> 将容器内的8080映射到当前机器的8081</p>
+<p>5.<code>-rm</code> 容器将在退出后删除</p>
+<p>然后我们访问<a href="https://link.juejin.cn?target=http%3A%2F%2Flocalhost%3A8081%2F">http://localhost:8081/</a> ，尝试修改src/App.vue中的代码。浏览器将会自动刷新，触发热重载。</p>
+<h2 id="13">13.新服务器部署时的运行问题</h2>
+<p><a href="https://www.cnblogs.com/manhelp/p/11277584.html">shell脚本执行错误 $'\r':command not found</a></p>
+<p>解决办法：</p>
+<pre><code class="language-bash">apt install dos2unix
+
+dos2unix  脚本名
 </code></pre>
-<h5 id="hbase-dashboard">Hbase Dashboard</h5>
+<h2 id="14docker">14.docker启动服务并远程访问</h2>
 <blockquote>
-<p>http://211.71.76.189:16010/master-status</p>
+<p>MongoDB：</p>
+<p>详细参考资料：</p>
+<p>https://www.cnblogs.com/xinsen/p/10588767.html</p>
+<p>然后导入MongoDB的集合</p>
+<p>Redis：</p>
+<p>参考资料</p>
+<p>https://www.jianshu.com/p/607da9661079</p>
+<p>MySQL：</p>
+<p>参考资料</p>
+<p>https://blog.csdn.net/weixin_42459563/article/details/80924634</p>
 </blockquote>
-<p>Hbase 表格</p>
-<p>1 快递员数据表格   </p>
-<pre><code>create 'postman_test','id','post_arrive_info','day','region','post_id'
-</code></pre>
-<h4 id="mysql">Mysql</h4>
-<pre><code class="language-bash"> docker run -p 3306:3306 --name post-mysql -v /data/MengQingqiang/postweb/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=669988  -d mysql:latest
-</code></pre>
-<p>docker exec -it fc0f68f00544 bash</p>
-<p>mongo pass 123456</p>
-<h3 id="docker-root">docker root</h3>
-<pre><code>sudo docker exec -ti -u root 70ce555dbfb1da80716db5bb1539b730b1d5964ab196323b3903d8b2b01e79ad bash
-</code></pre>
-<h4 id="torchserve">运行torchserve 命令</h4>
-<p>前台</p>
-<pre><code class="language-bash">docker run --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /data/MengQingqiang/rpc/model_store:/tmp/models torchserve:v1.1 torchserve --start --model-store /tmp/models/ --models greedy_time.mar,greedy_distance.mar,pointer_net.mar --no-config-snapshots
-</code></pre>
-<p>后台</p>
-<pre><code>docker run  --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /data/MengQingqiang/rpc/model_store:/tmp/models torchserer:v1.2.1 torchserve --start --model-store /tmp/models/ --models greedy_distance.mar --no-config-snapshots
-
-sudo docker run -d --rm -it -p 6080:8080 -p 6081:8081 -p 6082:8082 -p 7070:7070 -p 7071:7071 --volume /data/MengQingqiang/rpc/model_store:/tmp/models pytorch/torchserve:0.5.0-cpu torchserve --start --model-store /tmp/models/ --no-config-snapshots
-
-pytorch/torchserve
-</code></pre>
-<p>打包命令</p>
-<pre><code class="language-bash">torch-model-archiver --model-name greedy  --model-file ../serve/examples/image_classifier/greedy/greedy_distance.py --handler ../serve/examples/image_classifier/greedy/greedy_handler.py  --runtime python3 --version 1.0
-</code></pre>
-<p>0 不存在</p>
-<p>1 已创建任务</p>
-<p>2 预处理开始</p>
-<p>3 预处理完成，开始生成数据</p>
-<p>4 完成生成数据，开始写数据库</p>
-<p>5 完成</p>
-<pre><code>1. nnictl experiment show        show the information of experiments
-2. nnictl trial ls               list all of trial jobs
-3. nnictl top                    monitor the status of running experiments
-4. nnictl log stderr             show stderr log content
-5. nnictl log stdout             show stdout log content
-6. nnictl stop                   stop an experiment
-7. nnictl trial kill             kill a trial job by id
-8. nnictl --help                 get help information about nnictl
- sudo mount 10.126.56.9:/data/MengQingqiang/nni /data/MengQingqiang/mqq/nni
-
-nnictl create --config egcn_con.yml --port 9074
-</code></pre>
-<h3 id="_2">恢复容器</h3>
-<pre><code class="language-bash"># mysql: 
-docker start fc0f68f00544
-# rocketmq brocker
-docker start b95beabd4365
-# rocketmq namesrv
-docker start 72120183816a
-# dashboard
-docker start 19329818936a
-# mongodb
-docker start f4b554eaafca
-# redis 
-docker start bfaa84ad7062
-</code></pre>
 
               
             </article>
@@ -709,6 +890,41 @@ docker start bfaa84ad7062
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../1.7%20RocketMQ/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1.7 RocketMQ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              1.7 RocketMQ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../2.1%20%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="md-footer__link md-footer__link--next" aria-label="Next: 2.1 系统部署相关知识" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2.1 系统部署相关知识
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
